@@ -12,8 +12,12 @@ else  {
 
 
 
+
 let month = Math.floor(Math.random() * 11) + 1; // числа от 1 до 12
-if (month === 1|| month ===2 || month === 12) {
+
+const condition = month === 1|| month === 2 || month === 12;
+
+if (condition) {
     console.log('winter');
 }
 else if(month >2 && month < 6) {
