@@ -42,10 +42,8 @@ else  {
     console.log('fourth');
 }
 
-let age = 18;
-if (age >0 && age < 18){
-    console.log('child')
-}
-else{
-    console.log('adult')
-}
+let age = 9;
+
+// age < 18 ?  console.log('child')  : console.log('adult');
+
+console.log (age < 18 ? 'child' : 'adult');
