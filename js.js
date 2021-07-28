@@ -1,96 +1,57 @@
-function decada(day){
-    if (day > 0 && day < 11) {
-        console.log('first');
-    }
-    else if(day > 10 && day < 20) {
-        console.log('second');
-    }
-    else  {
-        console.log('third');
-    }
+let arr = [1, 2, 3, 4, 5];
+
+console.log(arr)
+console.log(arr.slice(0,3));
+let arr2 = arr.slice(0,3);
+console.log(arr2)
+
+
+console.log(arr.slice(3,5));
+let arr3 = arr.slice(3,5);
+console.log(arr3)
+
+
+
+
+const num ='1 1 2 4 4 5 6 7 1 2 4 5 3';
+let arr4 = num.split(' ');
+console.log(arr4)
+
+function spliceNum(numm,symbol){
+ let a= "";
+ for (let i=0; i < numm.length; i++){
+  if (numm[i]%2 !== 0 && i < numm.length-1){
+   a += numm[i] + symbol;
+  }
+  else {
+   a += numm[i];
+  }
+ }
+ console.log(a);
+ }
+
+spliceNum(arr4, '-')
+
+
+const arr5 = [1,2,3,4,5,6,7,8];
+const arr6 = ['Roma', 'Sasha', 'Vlad', 'Oleg'];
+const wrongLengthArr = [1,2,3];
+
+function changeHalf(arr7){
+ let c =[];
+ if(arr7.length%2 === 0 && (arr7.length)/2) {
+  c = arr7.splice((arr7.length)/2);
+  console.log(c);
+
+  let b = c.concat(arr7);
+  console.log(b);
+ }
+  else if (arr7.length%2 !== 0){
+   console.log(" Нечетная длина массива")
+  }
+
 
 }
-decada(24);
-
-
-let a = function (month){
-    const condition = month === 1|| month === 2 || month === 12;
-
-    if (condition) {
-        console.log('winter');
-    }
-    else if(month >2 && month < 6) {
-        console.log('spring');
-    }
-    else if(month > 5 && month >9)  {
-        console.log('summer');
-    }
-    else  {
-        console.log('autum');
-    }
-}
-a(5);
-
-
-let part =(min) =>{
-
-    if (min > -1 && min < 16) {
-        console.log('first');
-    }
-    else if(min > 15 && min < 31) {
-        console.log('second');
-    }
-    else if(min > 30 && min < 46)  {
-        console.log('third');
-    }
-    else  {
-        console.log('fourth');
-    }
-}
-part(35)
-
-
-function checkAge(age) {
-    console.log((age > 18) ? 'true' : 'false')
-}
-checkAge('19')
-
-
-// Сумма чисел от 0 до 100
-let c=0;
-for (let i=0; i<=100; i++){
-  c += i;
-}
-console.log(c);
-
-let b = 0;
-let i = 0;
-while (i<=100){
-    b += i;
-    i++;
-}
-console.log(b);
-
-
-let d = 0;
-let h = 0;
-do {
-    d += h;
-    h++;
-} while (h <= 100)
-console.log(d);
-
-
-
-function product(start,end){
-    let x=1;
-    for( let i=start; i<= end; i++){
-        if(i % 2 === 0){
-            x *= i;
-
-        }
-    }
-    return x;
-}
-
-console.log(product(1,6))
+changeHalf(arr5)
+changeHalf(arr6)
+changeHalf(wrongLengthArr)
