@@ -1,76 +1,38 @@
-let obj1= {
-    a:1,
-    b:2,
-};
-
-let obj2= {
-    a:1,
-    b:2,
-};
-let obj3= {
-    a:3,
-    b:4,
-};
-
-const isObj = (firstObj, secondObj) => {
-    const firstObjKeys = Object.keys(firstObj);
-    const secondObjKeys = Object.keys(secondObj);
-
-    if (firstObjKeys.length !== secondObjKeys.length) {
-        return false;
+class Vector{
+    constructor(size, [x,y,z]) {
+        this.size = size;
+        [this.x = x, this.y = y, this.z =z];
     }
 
-    for (const key in firstObj) {    //Аналог Object.keys();
-        if (firstObj[key] !== secondObj[key]) {
-            return false;
-        }
+    addition (number){
+    let vector = [this.x + number.x,this.y + number.y, this.z + number.z];
+    let vecsize = this.size + number.size;
+    return new Vector(vecsize, vector)
     }
-    return true;
-}
-console.log(isObj(obj1 , obj2));
 
-// Аналог Object.values();
+    subtraction(number){
+        let vector = [this.x - number.x,this.y - number.y, this.z - number.z];
+        let vecsize = this.size - number.size;
+        return new Vector(vecsize, vector)
+    }
 
-let obj= {
-    a:1,
-    b:2,
-};
-let x = 0;
- for (let key in obj) {
-    x = obj[key];
-    
- }
-console.log(x)
+    multiplicationByNumber(number){
+        let vector = [this.x * number,this.y * number, this.z * number];
+        let vecsize = this.size * number;
+        return new Vector(vecsize, vector)
+    }
+    scalarProduct(number){
+        let scalarProduct=[this.x * number.x, this.y * number.y,this.z * number.z];
+        return scalarProduct
+    }
 
-
-
-
-
-function Animal (aObj){
-     Object.assign(this,aObj );
 }
 
- const cat = new Animal({
-     name: 'cat',
-     location: 'Ukrain',
-      food: 'fish',
- });
+let vector1 = new Vector(4, [3,6,9])
 
-const dog = new Animal({
-    name: 'dog',
-    location: 'Germany',
-    food: 'meet',
-});
+let vector2 = new Vector(3, [2,4,6])
 
-const fish = new Animal({
-    name: 'fish',
-    location: 'Spain',
-    food: 'seaweed',
-});
-const zoo = [cat, dog, fish];
-const filtered = zoo.filter( (animal) =>{
-    return animal.location === 'Spain';
-})
-
-console.log(zoo);
-console.log(filtered);
+console.log(vector1.addition(vector2));
+console.log(vector1.subtraction(vector2));
+console.log(vector1.multiplicationByNumber(4));
+console.log(vector1.scalarProduct(vector2));
